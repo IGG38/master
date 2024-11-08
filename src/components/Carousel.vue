@@ -11,6 +11,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { NCarousel } from 'naive-ui';
+
 // import UserAvatar from '@/assets/images/avatar.png';
 
 export default {

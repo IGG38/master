@@ -1,54 +1,40 @@
 <template>
-   <div>
-      <h1>课程表</h1>
-      <table>
-         <thead>
-            <tr>
-               <th>课程名称</th>
-               <th>时间</th>
-               <th>地点</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr v-for="course in courses" :key="course.id">
-               <td>{{ course.name }}</td>
-               <td>{{ course.time }}</td>
-               <td>{{ course.location }}</td>
-            </tr>
-         </tbody>
-      </table>
-   </div>
+  <NFlex class="course-table" justify="center" align="center">{{ selectDate }}</NFlex>
 </template>
 
 <script>
-export default {
-   setup() {
-      const courses = [
-         { id: 1, name: '数学', time: '周一 9:00-10:30', location: '教室101' },
-         { id: 2, name: '英语', time: '周二 10:30-12:00', location: '教室102' },
-         { id: 3, name: '物理', time: '周三 13:00-14:30', location: '教室103' },
-         // 可以继续添加更多课程
-      ];
+import { ref, watch } from 'vue';
+import { NFlex } from 'naive-ui';
+import moment from 'moment';
 
-      return { courses };
-   },
+export default {
+  components: { NFlex },
+
+  props: {
+    selectDate: {
+      type: Number,
+      required: true,
+    },
+  },
+  setup(props) {
+    const selectDate = ref('');
+
+    watch(
+      () => props.selectDate,
+      (newVal) => {
+        const selectDateFormat = moment(newVal).format('YYYY-MM-DD');
+        selectDate.value = selectDateFormat;
+      }
+    );
+
+    return { selectDate };
+  },
 };
 </script>
 
-<style scoped>
-table {
-   width: 100%;
-   border-collapse: collapse;
-}
-
-th,
-td {
-   border: 1px solid #ccc;
-   padding: 8px;
-   text-align: left;
-}
-
-th {
-   background-color: #f2f2f2;
+<style>
+.course-table {
+  width: 100%;
+  height: 100%;
 }
 </style>
