@@ -1,7 +1,7 @@
 <template>
-  <div class="page">
-    <WaterFall />
-  </div>
+   <div class="page">
+      <WaterFall />
+   </div>
 </template>
 
 <script setup>
@@ -10,11 +10,18 @@ import { NFlex } from 'naive-ui';
 
 import WaterFall from '@/components/Layout/WaterFall.vue';
 
+
+
+
+
+
+
+
 </script>
 
 <style scoped>
 .page {
-  padding: 24px;
-  height: 100vh;
+   padding: 24px;
+   height: 100vh;
 }
 </style>
