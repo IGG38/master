@@ -3,33 +3,3 @@
   src: url('../assets/fonts/PatrickHand-Regular.ttf') format('truetype');
   font-display: swap;
 }
-
-@font-face {
-  font-family: 'Quicksand Bold';
-  src: url('../assets/fonts/Quicksand-Bold.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quicksand-Light';
-  font-display: swap;
-  src: url('../assets/fonts/Quicksand-Light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Quicksand Medium';
-  font-display: swap;
-  src: url('../assets/fonts/Quicksand-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Quicksand-Regular';
-  font-display: swap;
-  src: url('../assets/fonts/Quicksand-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Quicksand-SemiBold';
-  font-display: swap;
-  src: url('../assets/fonts/Quicksand-Bold.ttf') format('truetype');
-}
