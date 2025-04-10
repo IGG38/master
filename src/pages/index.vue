@@ -14,7 +14,14 @@
             <HeiSi />
          </div>
       </NFlex>
-   </div>
+      <div id="center">
+        <CourseTable :selectDate="selectDate" />
+      </div>
+      <div id="left">
+        <Countdown :targetDate="targetDate" />
+      </div>
+    </NFlex>
+  </div>
 </template>
 
 <script setup>
@@ -55,14 +62,14 @@ const onSelectDate = (date) => {
 
 <style scoped>
 .page {
-   padding: 24px;
-   /* width: 100vw; */
-   height: 100vh;
+  padding: 24px;
+  /* width: 100vw; */
+  height: 100vh;
 }
 
 .content {
-   width: 100%;
-   height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #left {
@@ -72,9 +79,9 @@ const onSelectDate = (date) => {
 }
 
 #center {
-   flex: 0.6;
-   border-radius: 8px;
-   background-color: #fafbfc;
+  flex: 0.6;
+  border-radius: 8px;
+  background-color: #fafbfc;
 }
 
 #right {
