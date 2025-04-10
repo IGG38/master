@@ -4,29 +4,26 @@
          <NFlex id="left" vertical>
             <User />
             <DatePicker :targetDate="targetDate" @selectDate="onSelectDate" />
-            <!-- <Carousel /> -->
+            <Carousel />
          </NFlex>
          <div id="center">
-            <CourseTable :selectDate="selectDate" />
+            <NButton @click="GO">go test</NButton>
+            <!-- <CourseTable :selectDate="selectDate" /> -->
          </div>
          <div id="right">
             <Countdown :targetDate="targetDate" />
             <HeiSi />
+            <!-- 8712d2458119ce30cfd119add078a814 -->
          </div>
       </NFlex>
-      <div id="center">
-         <CourseTable :selectDate="selectDate" />
-      </div>
-      <div id="left">
-         <Countdown :targetDate="targetDate" />
-      </div>
    </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { NFlex } from 'naive-ui';
 import { Http } from '@/tools/http';
+import { useRoute, useRouter } from 'vue-router';
+import { NButton, NFlex } from 'naive-ui';
 import moment from 'moment';
 
 // Left
@@ -41,11 +38,29 @@ import CourseTable from '@/components/CourseTable.vue';
 import Countdown from '@/components/Countdown.vue';
 import HeiSi from '@/components/HeiSi.vue';
 
+const router = useRouter();
 const http = Http.getInstance();
 
-const heisi = ref('');
+const GO = () => {
+   router.push('/test');
+}
 
-const init = async () => { };
+const init = async () => {
+
+
+
+
+   // const resp = await http.get({
+   //    url: 'https://restapi.amap.com/v3/weather/weatherInfo',
+   //    data: {
+   //       key: '8712d2458119ce30cfd119add078a814',
+   //       city: '330100',
+   //       extensions: 'all',
+   //       output: 'JSON'
+   //    }
+   // })
+   // console.log(resp);
+};
 
 onMounted(() => {
    init();

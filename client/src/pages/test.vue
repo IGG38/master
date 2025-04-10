@@ -10,13 +10,6 @@ import { NFlex } from 'naive-ui';
 
 import WaterFall from '@/components/Layout/WaterFall.vue';
 
-
-
-
-
-
-
-
 </script>
 
 <style scoped>

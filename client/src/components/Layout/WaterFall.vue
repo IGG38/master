@@ -15,9 +15,6 @@ import { ref, onMounted, defineProps } from 'vue';
 import { LazyImg, Waterfall } from 'vue-waterfall-plugin-next';
 import 'vue-waterfall-plugin-next/dist/style.css';
 
-
-
-
 const getSavedImages = () => {
    const key = 'heisi-images';
    return JSON.parse(localStorage.getItem(key) || '[]');
@@ -25,9 +22,9 @@ const getSavedImages = () => {
 
 const list = ref(getSavedImages());
 
-
 const breakpoints = ref({
-   3840: { //4K
+   //4K
+   3840: {
       rowPerView: 7,
    },
    1980: {
@@ -41,7 +38,10 @@ const breakpoints = ref({
    },
    500: {
       rowPerView: 2,
-   }
+   },
+   375: {
+      rowPerView: 1,
+   },
 })
 
 </script>
