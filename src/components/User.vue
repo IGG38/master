@@ -4,7 +4,7 @@
 
       <NFlex vertical justify="center">
          <span class="user-name">HERY</span>
-         <span class="user-desc">Description</span>
+         <span class="user-desc">test</span>
       </NFlex>
    </NFlex>
 </template>
