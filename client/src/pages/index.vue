@@ -8,6 +8,7 @@
          </NFlex>
          <div id="center">
             <NButton @click="GO">go test</NButton>
+            <NButton @click="GO1">go test1</NButton>
             <!-- <CourseTable :selectDate="selectDate" /> -->
          </div>
          <div id="right">
@@ -43,6 +44,9 @@ const http = Http.getInstance();
 
 const GO = () => {
    router.push('/test');
+}
+const GO1 = () => {
+   router.push('/test1');
 }
 
 const init = async () => {

@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
 
 const routes = [
   // {
@@ -36,14 +40,28 @@ const routes = [
   //   ],
   // },
   {
-    name: 'home',
-    path: '/home',
-    component: () => import('@/pages/index.vue'),
+    path: "/",
+    redirect: "/home",
   },
   {
-    name: 'test',
-    path: '/test',
-    component: () => import('@/pages/test.vue'),
+    name: "home",
+    path: "/home",
+    component: () => import("@/pages/index.vue"),
+  },
+  {
+    name: "test",
+    path: "/test",
+    component: () => import("@/pages/test.vue"),
+  },
+  {
+    name: "test1",
+    path: "/test1",
+    component: () => import("@/pages/test1.vue"),
+  },
+  {
+    name: "test2",
+    path: "/test2",
+    component: () => import("@/pages/test2.vue"),
   },
 ];
 
