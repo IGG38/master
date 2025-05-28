@@ -1,9 +1,9 @@
 <template>
   <NCarousel :autoplay="false">
+    <!-- <img class="carousel-img" src="@/assets/images/woman.png" />
     <img class="carousel-img" src="@/assets/images/woman.png" />
     <img class="carousel-img" src="@/assets/images/woman.png" />
-    <img class="carousel-img" src="@/assets/images/woman.png" />
-    <img class="carousel-img" src="@/assets/images/woman.png" />
+    <img class="carousel-img" src="@/assets/images/woman.png" /> -->
     <img class="carousel-img" src="@/assets/images/rog.gif" />
   </NCarousel>
 </template>

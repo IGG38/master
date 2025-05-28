@@ -27,37 +27,34 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+import axios from 'axios';
 import { Http } from '@/tools/http';
 
-const uid = ref('5612353058'); //me
-// const uid = ref('5494384472');
-const userInfo = ref(null);
 const http = Http.getInstance();
 
+const userInfo = ref(null);
+const uid = ref('601a2f050000000001003fff');
+// 9492710400
 onMounted(async () => {
   const resp = await http.get({
-    url: 'http://localhost:3001/api/weibo-info',
+    url: 'http://localhost:3003/api/xhs-info',
     params: { uid: uid.value },
   });
 
-  if (resp.__status !== 200) return;
-  userInfo.value = resp.data.user;
+  userInfo.value = resp.user;
 });
 
 const user = computed(() => {
   if (!userInfo.value) return null;
   return {
-    nickname: userInfo.value.screen_name,
+    nickname: userInfo.value.nickname,
     uid: userInfo.value.id,
     location: userInfo.value.location,
     followers_count: userInfo.value.followers_count,
     friends_count: userInfo.value.friends_count,
-    description: userInfo.value.description,
-    avatar: userInfo.value.avatar_hd,
-    cover: userInfo.value.cover_image_phone,
+    avatar: userInfo.value.avatar,
   };
 });
 </script>
